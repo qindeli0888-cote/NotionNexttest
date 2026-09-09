@@ -10,6 +10,7 @@ import SmartLink from '@/components/SmartLink'
 import { useRouter } from 'next/router'
 import { createContext, useContext, useEffect, useRef } from 'react'
 import BlogPostBar from './components/BlogPostBar'
+import LilyOSHome from './components/LilyOSHome'
 import CONFIG from './config'
 import { Style } from './style'
 
@@ -74,7 +75,8 @@ const LayoutBase = props => {
     <ThemeGlobalSimple.Provider value={{ searchModal }}>
       <div
         id='theme-simple'
-        className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:text-gray-300  bg-white dark:bg-black scroll-smooth`}>
+        className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:text-gray-300  bg-white dark:bg-black scroll-smooth`}
+      >
         <Style />
 
         {siteConfig('SIMPLE_TOP_BAR', null, CONFIG) && <TopBar {...props} />}
@@ -92,7 +94,8 @@ const LayoutBase = props => {
             (JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE'))
               ? 'flex-row-reverse'
               : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'
-          }>
+          }
+        >
           <div id='container-inner ' className='w-full flex-grow min-h-fit'>
             <Transition
               show={!onLoading}
@@ -103,7 +106,8 @@ const LayoutBase = props => {
               leave='transition ease-in-out duration-300 transform'
               leaveFrom='opacity-100 translate-y-0'
               leaveTo='opacity-0 -translate-y-16'
-              unmount={false}>
+              unmount={false}
+            >
               {slotTop}
 
               {children}
@@ -114,7 +118,8 @@ const LayoutBase = props => {
           {fullWidth ? null : (
             <div
               id='right-sidebar'
-              className='hidden xl:block flex-none sticky top-8 w-96 border-l dark:border-gray-800 pl-12 border-gray-100'>
+              className='hidden xl:block flex-none sticky top-8 w-96 border-l dark:border-gray-800 pl-12 border-gray-100'
+            >
               <SideBar {...props} />
             </div>
           )}
@@ -140,7 +145,21 @@ const LayoutBase = props => {
  * @returns
  */
 const LayoutIndex = props => {
-  return <LayoutPostList {...props} />
+  return (
+    <>
+      <LilyOSHome />
+      <section id='latest-work' className='lily-os-latest'>
+        <div className='lily-os-section-heading'>
+          <div>
+            <span>ARCHIVE &amp; OUTPUT</span>
+            <h2>🎬 Latest Works</h2>
+          </div>
+          <p>原有博客内容继续保留在这里</p>
+        </div>
+        <LayoutPostList {...props} />
+      </section>
+    </>
+  )
 }
 /**
  * 博客列表
@@ -225,7 +244,9 @@ const LayoutSlug = props => {
       {lock && <ArticleLock validPassword={validPassword} />}
 
       {!lock && post && (
-        <div className={`px-2  ${fullWidth ? '' : 'xl:max-w-4xl 2xl:max-w-6xl'}`}>
+        <div
+          className={`px-2  ${fullWidth ? '' : 'xl:max-w-4xl 2xl:max-w-6xl'}`}
+        >
           {/* 文章信息 */}
           <ArticleInfo post={post} />
 
@@ -271,19 +292,18 @@ const Layout404 = props => {
   useEffect(() => {
     // 404
     if (!post) {
-      setTimeout(
-        () => {
-          if (isBrowser) {
-            const article = document.querySelector('#article-wrapper #notion-article')
-            if (!article) {
-              router.push('/404').then(() => {
-                console.warn('找不到页面', router.asPath)
-              })
-            }
+      setTimeout(() => {
+        if (isBrowser) {
+          const article = document.querySelector(
+            '#article-wrapper #notion-article'
+          )
+          if (!article) {
+            router.push('/404').then(() => {
+              console.warn('找不到页面', router.asPath)
+            })
           }
-        },
-        waiting404
-      )
+        }
+      }, waiting404)
     }
   }, [post])
   return <>404 Not found.</>
@@ -305,11 +325,13 @@ const LayoutCategoryIndex = props => {
               key={category.name}
               href={`/category/${category.name}`}
               passHref
-              legacyBehavior>
+              legacyBehavior
+            >
               <div
                 className={
                   'hover:text-black dark:hover:text-white dark:text-gray-300 dark:hover:bg-gray-600 px-5 cursor-pointer py-2 hover:bg-gray-100'
-                }>
+                }
+              >
                 <i className='mr-4 fas fa-folder' />
                 {category.name}({category.count})
               </div>
@@ -338,7 +360,8 @@ const LayoutTagIndex = props => {
                 key={tag}
                 href={`/tag/${encodeURIComponent(tag.name)}`}
                 passHref
-                className={`cursor-pointer inline-block rounded hover:bg-gray-500 hover:text-white duration-200  mr-2 py-1 px-2 text-xs whitespace-nowrap dark:hover:text-white text-gray-600 hover:shadow-xl dark:border-gray-400 notion-${tag.color}_background dark:bg-gray-800`}>
+                className={`cursor-pointer inline-block rounded hover:bg-gray-500 hover:text-white duration-200  mr-2 py-1 px-2 text-xs whitespace-nowrap dark:hover:text-white text-gray-600 hover:shadow-xl dark:border-gray-400 notion-${tag.color}_background dark:bg-gray-800`}
+              >
                 <div className='font-light dark:text-gray-400'>
                   <i className='mr-1 fas fa-tag' />{' '}
                   {tag.name + (tag.count ? `(${tag.count})` : '')}{' '}
