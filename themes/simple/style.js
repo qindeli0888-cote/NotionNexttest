@@ -51,8 +51,8 @@ const Style = () => {
         cursor: pointer;
       }
 
-      #theme-simple .lily-os-home,
-      #theme-simple .lily-os-latest {
+      :is(#theme-simple, #theme-heo) .lily-os-home,
+      :is(#theme-simple, #theme-heo) .lily-os-latest {
         --lily-cream: #f4f0e6;
         --lily-paper: #fbf9f4;
         --lily-charcoal: #282b28;
@@ -61,7 +61,7 @@ const Style = () => {
         color: var(--lily-charcoal);
       }
 
-      #theme-simple .lily-os-hero {
+      :is(#theme-simple, #theme-heo) .lily-os-hero {
         position: relative;
         overflow: hidden;
         min-height: 420px;
@@ -73,7 +73,7 @@ const Style = () => {
         justify-content: center;
       }
 
-      #theme-simple .lily-os-hero::after {
+      :is(#theme-simple, #theme-heo) .lily-os-hero::after {
         content: '';
         position: absolute;
         right: -8rem;
@@ -87,15 +87,15 @@ const Style = () => {
           0 0 0 8rem rgba(145, 160, 135, 0.05);
       }
 
-      #theme-simple .lily-os-eyebrow,
-      #theme-simple .lily-os-section-heading span {
+      :is(#theme-simple, #theme-heo) .lily-os-eyebrow,
+      :is(#theme-simple, #theme-heo) .lily-os-section-heading span {
         color: var(--lily-sage-dark);
         font-size: 0.72rem;
         font-weight: 700;
         letter-spacing: 0.17em;
       }
 
-      #theme-simple .lily-os-hero h1 {
+      :is(#theme-simple, #theme-heo) .lily-os-hero h1 {
         position: relative;
         z-index: 1;
         margin: 0.7rem 0 0;
@@ -106,7 +106,7 @@ const Style = () => {
         letter-spacing: -0.055em;
       }
 
-      #theme-simple .lily-os-hero > p {
+      :is(#theme-simple, #theme-heo) .lily-os-hero > p {
         position: relative;
         z-index: 1;
         margin-top: 1.5rem;
@@ -115,7 +115,7 @@ const Style = () => {
         letter-spacing: 0.08em;
       }
 
-      #theme-simple .lily-os-hero-footer {
+      :is(#theme-simple, #theme-heo) .lily-os-hero-footer {
         position: relative;
         z-index: 1;
         margin-top: auto;
@@ -128,20 +128,20 @@ const Style = () => {
         font-size: 0.82rem;
       }
 
-      #theme-simple .lily-os-hero-footer a {
+      :is(#theme-simple, #theme-heo) .lily-os-hero-footer a {
         color: var(--lily-charcoal);
         border-bottom: 1px solid var(--lily-sage);
         padding-bottom: 0.2rem;
       }
 
-      #theme-simple .lily-os-navigation {
+      :is(#theme-simple, #theme-heo) .lily-os-navigation {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 0.8rem;
         margin: 1rem 0 5rem;
       }
 
-      #theme-simple .lily-os-nav-card {
+      :is(#theme-simple, #theme-heo) .lily-os-nav-card {
         min-height: 112px;
         padding: 1.3rem;
         border: 1px solid #e5e2d9;
@@ -157,13 +157,13 @@ const Style = () => {
           background 0.2s ease;
       }
 
-      #theme-simple .lily-os-nav-card:hover {
+      :is(#theme-simple, #theme-heo) .lily-os-nav-card:hover {
         transform: translateY(-3px);
         border-color: var(--lily-sage);
         background: #f1f3ec;
       }
 
-      #theme-simple .lily-os-nav-icon {
+      :is(#theme-simple, #theme-heo) .lily-os-nav-icon {
         width: 2.7rem;
         height: 2.7rem;
         border-radius: 0.9rem;
@@ -173,32 +173,32 @@ const Style = () => {
         font-size: 1.2rem;
       }
 
-      #theme-simple .lily-os-nav-card strong,
-      #theme-simple .lily-os-nav-card small {
+      :is(#theme-simple, #theme-heo) .lily-os-nav-card strong,
+      :is(#theme-simple, #theme-heo) .lily-os-nav-card small {
         display: block;
       }
 
-      #theme-simple .lily-os-nav-card strong {
+      :is(#theme-simple, #theme-heo) .lily-os-nav-card strong {
         font-size: 0.95rem;
       }
 
-      #theme-simple .lily-os-nav-card small {
+      :is(#theme-simple, #theme-heo) .lily-os-nav-card small {
         margin-top: 0.25rem;
         color: #757a73;
         font-size: 0.72rem;
       }
 
-      #theme-simple .lily-os-nav-arrow {
+      :is(#theme-simple, #theme-heo) .lily-os-nav-arrow {
         color: var(--lily-sage-dark);
       }
 
-      #theme-simple .lily-os-projects,
-      #theme-simple .lily-os-latest {
+      :is(#theme-simple, #theme-heo) .lily-os-projects,
+      :is(#theme-simple, #theme-heo) .lily-os-latest {
         scroll-margin-top: 2rem;
         margin-bottom: 5rem;
       }
 
-      #theme-simple .lily-os-section-heading {
+      :is(#theme-simple, #theme-heo) .lily-os-section-heading {
         margin-bottom: 1.35rem;
         display: flex;
         align-items: flex-end;
@@ -206,45 +206,45 @@ const Style = () => {
         gap: 1rem;
       }
 
-      #theme-simple .lily-os-section-heading h2 {
+      :is(#theme-simple, #theme-heo) .lily-os-section-heading h2 {
         margin: 0.25rem 0 0;
         font-size: clamp(1.55rem, 3vw, 2.25rem);
         font-weight: 650;
         letter-spacing: -0.035em;
       }
 
-      #theme-simple .lily-os-section-heading p {
+      :is(#theme-simple, #theme-heo) .lily-os-section-heading p {
         color: #7a7f77;
         font-size: 0.82rem;
       }
 
-      #theme-simple .lily-os-project-grid {
+      :is(#theme-simple, #theme-heo) .lily-os-project-grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
       }
 
-      #theme-simple .lily-os-project-card {
+      :is(#theme-simple, #theme-heo) .lily-os-project-card {
         padding: 1.5rem;
         border-radius: 1.4rem;
         background: var(--lily-charcoal);
         color: #f7f4ec;
       }
 
-      #theme-simple .lily-os-project-topline,
-      #theme-simple .lily-os-project-meta {
+      :is(#theme-simple, #theme-heo) .lily-os-project-topline,
+      :is(#theme-simple, #theme-heo) .lily-os-project-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
 
-      #theme-simple .lily-os-project-number {
+      :is(#theme-simple, #theme-heo) .lily-os-project-number {
         color: #9ca298;
         font-family: Georgia, 'Times New Roman', serif;
         font-size: 1.2rem;
       }
 
-      #theme-simple .lily-os-priority {
+      :is(#theme-simple, #theme-heo) .lily-os-priority {
         padding: 0.22rem 0.55rem;
         border-radius: 999px;
         background: var(--lily-sage);
@@ -253,19 +253,19 @@ const Style = () => {
         font-weight: 800;
       }
 
-      #theme-simple .lily-os-project-card h3 {
+      :is(#theme-simple, #theme-heo) .lily-os-project-card h3 {
         min-height: 3.4rem;
         margin: 2.5rem 0 0.2rem;
         font-size: 1.25rem;
         line-height: 1.3;
       }
 
-      #theme-simple .lily-os-project-card > p {
+      :is(#theme-simple, #theme-heo) .lily-os-project-card > p {
         color: #aeb4aa;
         font-size: 0.75rem;
       }
 
-      #theme-simple .lily-os-progress {
+      :is(#theme-simple, #theme-heo) .lily-os-progress {
         height: 4px;
         margin-top: 1.5rem;
         overflow: hidden;
@@ -273,93 +273,93 @@ const Style = () => {
         background: #4d514b;
       }
 
-      #theme-simple .lily-os-progress span {
+      :is(#theme-simple, #theme-heo) .lily-os-progress span {
         display: block;
         height: 100%;
         border-radius: inherit;
         background: #b7c5ac;
       }
 
-      #theme-simple .lily-os-project-meta {
+      :is(#theme-simple, #theme-heo) .lily-os-project-meta {
         margin-top: 0.55rem;
         color: #aeb4aa;
         font-size: 0.7rem;
       }
 
-      #theme-simple .lily-os-next-action {
+      :is(#theme-simple, #theme-heo) .lily-os-next-action {
         margin-top: 1.35rem;
         padding-top: 1rem;
         border-top: 1px solid #41453f;
       }
 
-      #theme-simple .lily-os-next-action small,
-      #theme-simple .lily-os-next-action strong {
+      :is(#theme-simple, #theme-heo) .lily-os-next-action small,
+      :is(#theme-simple, #theme-heo) .lily-os-next-action strong {
         display: block;
       }
 
-      #theme-simple .lily-os-next-action small {
+      :is(#theme-simple, #theme-heo) .lily-os-next-action small {
         color: #8f968b;
         font-size: 0.65rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
-      #theme-simple .lily-os-next-action strong {
+      :is(#theme-simple, #theme-heo) .lily-os-next-action strong {
         margin-top: 0.35rem;
         font-size: 0.8rem;
         font-weight: 500;
       }
 
-      .dark #theme-simple .lily-os-home,
-      .dark #theme-simple .lily-os-latest {
+      .dark :is(#theme-simple, #theme-heo) .lily-os-home,
+      .dark :is(#theme-simple, #theme-heo) .lily-os-latest {
         color: #e7e5df;
       }
 
-      .dark #theme-simple .lily-os-hero,
-      .dark #theme-simple .lily-os-nav-card {
+      .dark :is(#theme-simple, #theme-heo) .lily-os-hero,
+      .dark :is(#theme-simple, #theme-heo) .lily-os-nav-card {
         background: #20231f;
         border-color: #333930;
       }
 
-      .dark #theme-simple .lily-os-hero > p,
-      .dark #theme-simple .lily-os-nav-card small,
-      .dark #theme-simple .lily-os-section-heading p {
+      .dark :is(#theme-simple, #theme-heo) .lily-os-hero > p,
+      .dark :is(#theme-simple, #theme-heo) .lily-os-nav-card small,
+      .dark :is(#theme-simple, #theme-heo) .lily-os-section-heading p {
         color: #a8ada4;
       }
 
-      .dark #theme-simple .lily-os-hero-footer a {
+      .dark :is(#theme-simple, #theme-heo) .lily-os-hero-footer a {
         color: #e7e5df;
       }
 
       @media (max-width: 820px) {
-        #theme-simple .lily-os-navigation,
-        #theme-simple .lily-os-project-grid {
+        :is(#theme-simple, #theme-heo) .lily-os-navigation,
+        :is(#theme-simple, #theme-heo) .lily-os-project-grid {
           grid-template-columns: 1fr;
         }
 
-        #theme-simple .lily-os-hero {
+        :is(#theme-simple, #theme-heo) .lily-os-hero {
           min-height: 360px;
           border-radius: 1.4rem;
         }
 
-        #theme-simple .lily-os-project-card h3 {
+        :is(#theme-simple, #theme-heo) .lily-os-project-card h3 {
           min-height: 0;
           margin-top: 1.8rem;
         }
       }
 
       @media (max-width: 540px) {
-        #theme-simple .lily-os-hero-footer,
-        #theme-simple .lily-os-section-heading {
+        :is(#theme-simple, #theme-heo) .lily-os-hero-footer,
+        :is(#theme-simple, #theme-heo) .lily-os-section-heading {
           align-items: flex-start;
           flex-direction: column;
         }
 
-        #theme-simple .lily-os-hero-footer {
+        :is(#theme-simple, #theme-heo) .lily-os-hero-footer {
           padding-top: 3rem;
         }
 
-        #theme-simple .lily-os-navigation {
+        :is(#theme-simple, #theme-heo) .lily-os-navigation {
           margin-bottom: 3.5rem;
         }
       }
