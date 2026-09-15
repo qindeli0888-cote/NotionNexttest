@@ -42,63 +42,6 @@ const CONFIG = {
       href: '/search'
     }
   ],
-  LILY_OS_PROJECTS: [
-    {
-      project: 'Ron 90 Days',
-      status: '进行中',
-      category: 'Motion',
-      priority: 'P1',
-      progress: 15,
-      nextAction: '开始 DAY 02',
-      featured: true
-    },
-    {
-      project: 'AI萌宠变身宇宙',
-      status: '进行中',
-      category: 'AI Animation',
-      priority: 'P1',
-      progress: 45,
-      nextAction: '完善角色资产',
-      featured: true
-    },
-    {
-      project: '返乡建房纪录片',
-      status: '进行中',
-      category: 'Documentary',
-      priority: 'P1',
-      progress: 30,
-      nextAction: '整理已有施工素材',
-      featured: true
-    },
-    {
-      project: 'Lily Personal IP',
-      status: '未开始',
-      category: 'Personal IP',
-      priority: 'P2',
-      progress: 20,
-      nextAction: '完善首批选题',
-      featured: false
-    },
-    {
-      project: '天道忌满，人道忌全',
-      status: '进行中',
-      category: 'AI Video',
-      priority: 'P2',
-      progress: 60,
-      nextAction: '完成剩余镜头',
-      featured: false
-    },
-    {
-      project: '7×24无人直播',
-      status: '完成',
-      category: 'AI System',
-      priority: 'P2',
-      progress: 90,
-      nextAction: '整理成作品案例',
-      featured: false
-    }
-  ],
-
   SIMPLE_LOGO_IMG: '/Logo.webp',
   SIMPLE_TOP_BAR: true, // 显示顶栏
   SIMPLE_TOP_BAR_CONTENT: process.env.NEXT_PUBLIC_THEME_SIMPLE_TOP_TIPS || '',

@@ -49,14 +49,7 @@ const ProjectCard = ({ project, index }) => (
  * change the public Notion article database used by NotionNext.
  */
 const LilyOSHome = ({ projects = [] }) => {
-  const notionProjectNames = new Set(projects.map(project => project.project))
-  const projectSource = [
-    ...projects,
-    ...CONFIG.LILY_OS_PROJECTS.filter(
-      project => !notionProjectNames.has(project.project)
-    )
-  ]
-  const activeProjects = projectSource.filter(
+  const activeProjects = projects.filter(
     project =>
       project.featured !== false &&
       project.priority === 'P1' &&
