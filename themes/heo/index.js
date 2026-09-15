@@ -71,7 +71,7 @@ const LayoutBase = props => {
           <NoticeBar />
           <LilyOSStyle />
           <div className='max-w-[86rem] mx-auto px-5 pt-5'>
-            <LilyOSHome />
+            <LilyOSHome projects={props.lilyProjects} />
           </div>
         </>
       ) : null}

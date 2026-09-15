@@ -147,7 +147,7 @@ const LayoutBase = props => {
 const LayoutIndex = props => {
   return (
     <>
-      <LilyOSHome />
+      <LilyOSHome projects={props.lilyProjects} />
       <section id='latest-work' className='lily-os-latest'>
         <div className='lily-os-section-heading'>
           <div>

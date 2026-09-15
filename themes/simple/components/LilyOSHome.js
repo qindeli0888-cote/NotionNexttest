@@ -22,7 +22,13 @@ const ProjectCard = ({ project, index }) => (
       <span className='lily-os-project-number'>0{index + 1}</span>
       <span className='lily-os-priority'>{project.priority}</span>
     </div>
-    <h3>{project.project}</h3>
+    <h3>
+      {project.href ? (
+        <SmartLink href={project.href}>{project.project}</SmartLink>
+      ) : (
+        project.project
+      )}
+    </h3>
     <p>{project.category}</p>
     <div className='lily-os-progress' aria-label={`进度 ${project.progress}%`}>
       <span style={{ width: `${project.progress}%` }} />
@@ -42,9 +48,21 @@ const ProjectCard = ({ project, index }) => (
  * Lily OS homepage shell. The project cards are presentation-only and do not
  * change the public Notion article database used by NotionNext.
  */
-const LilyOSHome = () => {
-  const activeProjects = CONFIG.LILY_OS_PROJECTS.filter(
-    project => project.priority === 'P1' && project.status !== '完成'
+const LilyOSHome = ({ projects = [] }) => {
+  const notionProjectNames = new Set(projects.map(project => project.project))
+  const projectSource = [
+    ...projects,
+    ...CONFIG.LILY_OS_PROJECTS.filter(
+      project => !notionProjectNames.has(project.project)
+    )
+  ]
+  const activeProjects = projectSource.filter(
+    project =>
+      project.featured !== false &&
+      project.priority === 'P1' &&
+      !['完成', '已完成', 'Completed', 'Done', 'Archived'].includes(
+        project.status
+      )
   )
 
   return (
