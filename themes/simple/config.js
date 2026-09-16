@@ -1,6 +1,6 @@
 const CONFIG = {
   // Lily OS 首页。这里只控制公开网站的展示，不写入或修改 Notion 文章库。
-  LILY_OS_TITLE: process.env.NEXT_PUBLIC_LILY_OS_TITLE || 'Lily OS',
+  LILY_OS_TITLE: process.env.NEXT_PUBLIC_LILY_OS_TITLE || 'Lily‘s OS',
   LILY_OS_SUBTITLE:
     process.env.NEXT_PUBLIC_LILY_OS_SUBTITLE ||
     'AI创作 · 项目管理 · 作品沉淀 · 知识系统',

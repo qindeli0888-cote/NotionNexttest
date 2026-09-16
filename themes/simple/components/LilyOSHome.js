@@ -62,7 +62,7 @@ const LilyOSHome = ({ projects = [] }) => {
     <div className='lily-os-home'>
       <section className='lily-os-hero' aria-labelledby='lily-os-title'>
         <div className='lily-os-eyebrow'>
-          LILY&apos;S CREATIVE OPERATING SYSTEM
+          LILY‘S CREATIVE OPERATING SYSTEM
         </div>
         <h1 id='lily-os-title'>{CONFIG.LILY_OS_TITLE}</h1>
         <p>{CONFIG.LILY_OS_SUBTITLE}</p>
@@ -72,7 +72,7 @@ const LilyOSHome = ({ projects = [] }) => {
         </div>
       </section>
 
-      <nav className='lily-os-navigation' aria-label='Lily OS 模块导航'>
+      <nav className='lily-os-navigation' aria-label='Lily‘s OS 模块导航'>
         {CONFIG.LILY_OS_NAVIGATION.map(item => (
           <NavigationCard key={item.title} item={item} />
         ))}
