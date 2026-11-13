@@ -3,6 +3,7 @@ import { siteConfig } from '@/lib/config'
 import SmartLink from '@/components/SmartLink'
 import CONFIG from '../config'
 import SocialButton from './SocialButton'
+import { useRouter } from 'next/router'
 
 /**
  * 网站顶部
@@ -10,6 +11,28 @@ import SocialButton from './SocialButton'
  */
 export default function Header(props) {
   const { siteInfo } = props
+  const router = useRouter()
+
+  if (router.pathname === '/') {
+    return (
+      <header className='lily-os-site-header'>
+        <SmartLink href='/' className='lily-os-site-brand'>
+          <span className='lily-os-brand-mark' aria-hidden='true'>
+            L
+          </span>
+          <span>{CONFIG.LILY_OS_TITLE}</span>
+        </SmartLink>
+        <nav aria-label='首页快捷导航'>
+          <a href='#active-projects'>Projects</a>
+          <a href='#latest-work'>Works</a>
+          <SmartLink href='/archive'>Knowledge</SmartLink>
+          <SmartLink href='/search' className='lily-os-header-cta'>
+            Search <span aria-hidden='true'>⌘ K</span>
+          </SmartLink>
+        </nav>
+      </header>
+    )
+  }
 
   return (
     <header className='text-center justify-between items-center px-6 bg-white h-80 dark:bg-black relative z-10'>

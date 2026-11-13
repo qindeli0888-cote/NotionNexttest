@@ -70,12 +70,14 @@ const LayoutBase = props => {
   const { children, slotTop } = props
   const { onLoading, fullWidth } = useGlobal()
   const searchModal = useRef(null)
+  const router = useRouter()
+  const isLilyOSHome = router.pathname === '/'
 
   return (
     <ThemeGlobalSimple.Provider value={{ searchModal }}>
       <div
         id='theme-simple'
-        className={`${siteConfig('FONT_STYLE')} min-h-screen flex flex-col dark:text-gray-300  bg-white dark:bg-black scroll-smooth`}
+        className={`${siteConfig('FONT_STYLE')} ${isLilyOSHome ? 'lily-os-shell' : ''} min-h-screen flex flex-col dark:text-gray-300 bg-white dark:bg-black scroll-smooth`}
       >
         <Style />
 
@@ -93,7 +95,8 @@ const LayoutBase = props => {
           className={
             (JSON.parse(siteConfig('LAYOUT_SIDEBAR_REVERSE'))
               ? 'flex-row-reverse'
-              : '') + ' w-full flex-1 flex items-start max-w-9/10 mx-auto pt-12'
+              : '') +
+            ` w-full flex-1 flex items-start max-w-9/10 mx-auto ${isLilyOSHome ? 'lily-os-container' : 'pt-12'}`
           }
         >
           <div id='container-inner ' className='w-full flex-grow min-h-fit'>
@@ -151,10 +154,10 @@ const LayoutIndex = props => {
       <section id='latest-work' className='lily-os-latest'>
         <div className='lily-os-section-heading'>
           <div>
-            <span>ARCHIVE &amp; OUTPUT</span>
-            <h2>🎬 Latest Works</h2>
+            <span>03 / ARCHIVE &amp; OUTPUT</span>
+            <h2>Latest Works</h2>
           </div>
-          <p>原有博客内容继续保留在这里</p>
+          <p>作品、实验与方法沉淀，持续从 Notion 更新</p>
         </div>
         <LayoutPostList {...props} />
       </section>
