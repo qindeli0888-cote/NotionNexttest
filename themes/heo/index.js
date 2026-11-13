@@ -32,9 +32,9 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import LilyOSHome from '../simple/components/LilyOSHome'
+import LilyOSHeader from '../simple/components/Header'
 import { Style as LilyOSStyle } from '../simple/style'
 import LatestPostsGroup from './components/LatestPostsGroup'
-import { NoticeBar } from './components/NoticeBar'
 import PostAdjacent from './components/PostAdjacent'
 import PostCopyright from './components/PostCopyright'
 import PostHeader from './components/PostHeader'
@@ -59,18 +59,18 @@ const LayoutBase = props => {
   // 全屏模式下的最大宽度
   const { fullWidth, isDarkMode } = useGlobal()
   const router = useRouter()
+  const isLilyOSHome = router.route === '/'
 
   const headerSlot = (
     <header>
       {/* 顶部导航 */}
-      <Header {...props} />
+      {isLilyOSHome ? <LilyOSHeader {...props} /> : <Header {...props} />}
 
       {/* 通知横幅 */}
-      {router.route === '/' ? (
+      {isLilyOSHome ? (
         <>
-          <NoticeBar />
           <LilyOSStyle />
-          <div className='max-w-[86rem] mx-auto px-5 pt-5'>
+          <div className='lily-os-container mx-auto'>
             <LilyOSHome projects={props.lilyProjects} />
           </div>
         </>
@@ -100,7 +100,7 @@ const LayoutBase = props => {
   return (
     <div
       id='theme-heo'
-      className={`${siteConfig('FONT_STYLE')} bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col scroll-smooth`}
+      className={`${siteConfig('FONT_STYLE')} ${isLilyOSHome ? 'lily-os-shell' : ''} bg-[#f7f9fe] dark:bg-[#18171d] h-full min-h-screen flex flex-col scroll-smooth`}
     >
       <Style />
 
@@ -147,17 +147,13 @@ const LayoutBase = props => {
  */
 const LayoutIndex = props => {
   return (
-    <div id='latest-work' className='px-5 pt-16 md:px-0 scroll-mt-8'>
-      <div className='mb-5 flex items-end justify-between gap-4'>
+    <section id='latest-work' className='lily-os-latest scroll-mt-8'>
+      <div className='lily-os-section-heading'>
         <div>
-          <span className='text-xs font-bold tracking-[.17em] text-[#68765f]'>
-            ARCHIVE &amp; OUTPUT
-          </span>
-          <h2 className='mt-1 text-2xl font-bold tracking-tight dark:text-white md:text-4xl'>
-            🎬 Latest Works
-          </h2>
+          <span>03 / ARCHIVE &amp; OUTPUT</span>
+          <h2>Latest Works</h2>
         </div>
-        <p className='text-sm text-gray-500'>原有博客内容继续保留在这里</p>
+        <p>作品、实验与方法沉淀，持续从 Notion 更新</p>
       </div>
       {/* 文章分类条 */}
       <CategoryBar {...props} />
@@ -166,7 +162,7 @@ const LayoutIndex = props => {
       ) : (
         <BlogPostListScroll {...props} />
       )}
-    </div>
+    </section>
   )
 }
 

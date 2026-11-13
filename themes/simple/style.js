@@ -45,7 +45,7 @@ const Style = () => {
       }
 
       /* Lily‘s OS — Linear-inspired product shell */
-      #theme-simple.lily-os-shell {
+      :is(#theme-simple, #theme-heo).lily-os-shell {
         --lily-bg: #08090a;
         --lily-panel: #101114;
         --lily-line: rgba(255, 255, 255, 0.09);
@@ -69,7 +69,7 @@ const Style = () => {
         -webkit-font-smoothing: antialiased;
       }
 
-      #theme-simple.lily-os-shell::before {
+      :is(#theme-simple, #theme-heo).lily-os-shell::before {
         content: '';
         position: fixed;
         inset: 0;
@@ -94,7 +94,7 @@ const Style = () => {
         mask-image: linear-gradient(to bottom, black, transparent 72%);
       }
 
-      #theme-simple.lily-os-shell::after {
+      :is(#theme-simple, #theme-heo).lily-os-shell::after {
         content: '';
         position: fixed;
         top: -24rem;
@@ -109,13 +109,13 @@ const Style = () => {
         filter: blur(90px);
       }
 
-      #theme-simple.lily-os-shell .lily-os-container {
+      :is(#theme-simple, #theme-heo).lily-os-shell .lily-os-container {
         width: min(1180px, 92vw) !important;
         max-width: 1180px !important;
         padding-top: 0;
       }
 
-      #theme-simple.lily-os-shell > footer {
+      :is(#theme-simple, #theme-heo).lily-os-shell > footer {
         border-top: 1px solid var(--lily-line);
         background: #08090a;
         color: var(--lily-muted);
@@ -765,22 +765,32 @@ const Style = () => {
         line-height: 1.45;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest > .w-full {
+      :is(#theme-simple, #theme-heo).lily-os-shell .lily-os-latest > .w-full {
         padding-right: 0 !important;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest #posts-wrapper {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        #posts-wrapper {
         overflow: hidden;
         border: 1px solid var(--lily-line);
         border-radius: 0.8rem;
         background: rgba(255, 255, 255, 0.012);
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest #posts-wrapper > div + div {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        #posts-wrapper
+        > div
+        + div {
         border-top: 1px solid var(--lily-line);
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest #posts-wrapper > div > div {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        #posts-wrapper
+        > div
+        > div {
         height: auto;
         min-height: 0;
         margin: 0;
@@ -789,7 +799,7 @@ const Style = () => {
         transition: background 160ms ease;
       }
 
-      #theme-simple.lily-os-shell
+      :is(#theme-simple, #theme-heo).lily-os-shell
         .lily-os-latest
         #posts-wrapper
         > div
@@ -797,11 +807,15 @@ const Style = () => {
         background: rgba(255, 255, 255, 0.026);
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest .article-info {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        .article-info {
         width: 100%;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest .blog-item-title {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        .blog-item-title {
         color: #e1e2e4;
         background-image: none;
         font-size: 1.08rem;
@@ -809,27 +823,41 @@ const Style = () => {
         letter-spacing: -0.025em;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest .blog-item-title:hover {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        .blog-item-title:hover {
         color: #c4b5fd;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest article header,
-      #theme-simple.lily-os-shell .lily-os-latest article main {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        article
+        header,
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        article
+        main {
         color: #747982;
         font-size: 0.7rem;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest article header {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        article
+        header {
         margin-bottom: 0.85rem;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest article main {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        article
+        main {
         max-width: 54rem;
         margin-bottom: 0;
         line-height: 1.65;
       }
 
-      #theme-simple.lily-os-shell
+      :is(#theme-simple, #theme-heo).lily-os-shell
         .lily-os-latest
         #posts-wrapper
         > div
@@ -838,7 +866,7 @@ const Style = () => {
         margin-top: 1rem;
       }
 
-      #theme-simple.lily-os-shell
+      :is(#theme-simple, #theme-heo).lily-os-shell
         .lily-os-latest
         #posts-wrapper
         > div
@@ -852,9 +880,45 @@ const Style = () => {
         line-height: 1.4;
       }
 
-      #theme-simple.lily-os-shell .lily-os-latest .text-blue-600 {
+      :is(#theme-simple, #theme-heo).lily-os-shell
+        .lily-os-latest
+        .text-blue-600 {
         color: #9e8fe3 !important;
         border-color: rgba(158, 143, 227, 0.35) !important;
+      }
+
+      #theme-heo.lily-os-shell #wrapper-outer {
+        width: min(1180px, 92vw);
+        max-width: 1180px;
+        padding: 0 !important;
+      }
+
+      #theme-heo.lily-os-shell .lily-os-latest article > div {
+        border-color: var(--lily-line) !important;
+        background: var(--lily-panel) !important;
+        box-shadow: none !important;
+      }
+
+      #theme-heo.lily-os-shell .lily-os-latest article a,
+      #theme-heo.lily-os-shell .lily-os-latest article .text-black {
+        color: #e1e2e4 !important;
+      }
+
+      #theme-heo.lily-os-shell .lily-os-latest article main,
+      #theme-heo.lily-os-shell .lily-os-latest article .text-gray-600,
+      #theme-heo.lily-os-shell .lily-os-latest article .text-gray-700 {
+        color: #81858d !important;
+      }
+
+      #theme-heo.lily-os-shell .lily-os-latest article > div:hover {
+        border-color: rgba(196, 181, 253, 0.25) !important;
+      }
+
+      #theme-heo.lily-os-shell .lily-os-latest #category-bar,
+      #theme-heo.lily-os-shell .lily-os-latest .category-bar {
+        border-color: var(--lily-line) !important;
+        background: rgba(255, 255, 255, 0.025) !important;
+        color: var(--lily-muted-strong) !important;
       }
 
       @media (max-width: 980px) {
@@ -965,15 +1029,19 @@ const Style = () => {
           flex-direction: column;
         }
 
-        #theme-simple.lily-os-shell .lily-os-latest #posts-wrapper > div > div {
+        :is(#theme-simple, #theme-heo).lily-os-shell
+          .lily-os-latest
+          #posts-wrapper
+          > div
+          > div {
           padding: 1.2rem;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        #theme-simple.lily-os-shell *,
-        #theme-simple.lily-os-shell *::before,
-        #theme-simple.lily-os-shell *::after {
+        :is(#theme-simple, #theme-heo).lily-os-shell *,
+        :is(#theme-simple, #theme-heo).lily-os-shell *::before,
+        :is(#theme-simple, #theme-heo).lily-os-shell *::after {
           scroll-behavior: auto !important;
           transition-duration: 0.01ms !important;
         }
